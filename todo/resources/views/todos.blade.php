@@ -1,30 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Todo List</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="col-sm-12 mt-3">
-            <!-- <div class="jumbotron my-3"> -->
-                <h3 class="bg-primary text-light py-2 px-4">Todo List</h3>
-            <!-- </div> -->
-        </div>
-        <div class="col-sm-12 my-3">
-        	<div class="jumbotron py-3">
-        		@foreach($todos as $todo)
-        		<p>{{$todo->todo}}</p>
-        		@endforeach
-        	</div>
-        </div>
+@extends('layout/layout') @section('content')
+<div class="container-fluid">
+<div class="col-sm-12 mt-3">
+    <h3 class="bg-primary text-light py-2 px-4">Todo List</h3> @foreach($todos as $todo)
+    <div class="align-middle">
+        <p class="px-4 mb-0 align-middle">{{$todo->todo}}<span class="float-right mr-3 mb-0 mt-0">{{$todo->created_at}}</span></p> {{--
+        <div class="input-"></div> --}}
+        <div class="clearfix"></div>
+        <hr class="my-2">
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    @endforeach
+</div>
+</div>
+@endsection {{-- @stop --}}

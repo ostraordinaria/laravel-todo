@@ -18,3 +18,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/todos', 'TodoController@index');
+
+Route::get('/create/todo', 'TodoController@create');
+
+Route::post('/create/todo', 'TodoController@store');
